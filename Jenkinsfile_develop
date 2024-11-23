@@ -19,8 +19,7 @@ pipeline {
                 sh 'docker stop website || true && docker rm website || true'
                 sh 'docker run --name website -d -p 8081:80 finalwebsite'        }
        
-    }
-
+        }
 
         stage('testing'){
             steps {
