@@ -16,7 +16,9 @@ pipeline {
         stage('built and run') {
             steps {
                 sh 'docker build -t finalwebsite .'
-                sh 'docker run --name website -d -p 8081:80 finalwebsite'        }
+                sh 'docker stop website || true && docker rm website || true'
+                sh 'docker run --name website -d -p 8081:80 finalwebsite'
+            }
        
         }
 
@@ -28,3 +30,4 @@ pipeline {
         }
 
 }             
+}
