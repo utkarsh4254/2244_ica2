@@ -35,12 +35,12 @@ pipeline {
                     script {
                         def buildId = env.BUILD_ID
                         sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
-                        sh "docker tag mywebsite abhipatel2002/2244_ica2:latest"
-                        sh "docker tag mywebsite abhipatel2002/2244_ica2:develop-${env.BUILD_ID}"
-                        sh "docker push abhipatel2002/2244_ica2:latest"
-                        sh "docker push abhipatel2002/2244_ica2:develop-$buildId"}  
+                        sh "docker tag finalwebsite utkersh277/2244_ica2:latest"
+                        sh "docker tag finalwebsite utkersh277/2244_ica2:develop-${env.BUILD_ID}"
+                        sh "docker push utkersh277/2244_ica2:latest"
+                        sh "docker push utkersh277/2244_ica2:develop-$buildId"}  
                 }    
             }
+        }
     }
-}
 }
