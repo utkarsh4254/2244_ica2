@@ -19,6 +19,12 @@ pipeline {
                 sh 'docker run -d -p 8081:80 finalwebsite'
             }
         }
+        stage('testing'){
+            steps {
+                sh 'curl -I localhost:8081'
+            }
+
+        }
 
        
     }
