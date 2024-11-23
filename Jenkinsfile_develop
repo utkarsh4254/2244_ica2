@@ -38,8 +38,7 @@ pipeline {
                         sh "docker tag mywebsite abhipatel2002/2244_ica2:latest"
                         sh "docker tag mywebsite abhipatel2002/2244_ica2:develop-${env.BUILD_ID}"
                         sh "docker push abhipatel2002/2244_ica2:latest"
-                        sh "docker push abhipatel2002/2244_ica2:develop-$buildId"
-                        }  
+                        sh "docker push abhipatel2002/2244_ica2:develop-$buildId"}  
                 }    
             }
     }
