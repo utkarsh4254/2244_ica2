@@ -16,7 +16,7 @@ pipeline {
         stage('built and run') {
             steps {
                 sh 'docker build -t finalwebsite .'
-                sh 'docker run -d -p 8081:80 finalwebsite .'
+                sh 'docker run -d -p 8081:80 finalwebsite '
             }
         }
 
