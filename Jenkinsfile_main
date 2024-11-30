@@ -11,8 +11,8 @@ pipeline {
         }
         stage('Run Container') {
             steps {
-                sh 'docker stop utkersh277/2244_ica2:latest || true && docker rm utkersh277/2244_ica2:latest || true'
-                sh 'docker run -d -p 8082:80 utkersh277/2244_ica2:latest'
+                sh 'docker stop website || true && docker rm website || true'
+                sh 'docker run --name website -d -p 8082:80 utkersh277/2244_ica2:latest'
             }
         }
         stage('Test') {
