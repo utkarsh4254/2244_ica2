@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    environment {
+        DOCKER_REPO = "utkersh277/2244_ica2"
+    }
+    stages {
+        stage('Pull Docker Image') {
+            steps {
+                sh 'docker pull utkersh277/2244_ica2:latest'
+            }
+        }
+        stage('Run Container') {
+            steps {
+                sh 'docker stop utkersh277/2244_ica2:latest || true && docker rm utkersh277/2244_ica2:latest || true'
+                sh 'docker run -d -p 8082:80 utkersh277/2244_ica2:latest'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'curl -I localhost:8082'
+            }
+        }
+    }
+}
